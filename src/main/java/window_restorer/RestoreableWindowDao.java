@@ -111,6 +111,8 @@ public abstract class RestoreableWindowDao {
 			Json.parse(fr);
 			return true;
 		} catch (Exception e) {
+			LOGGER.error("There was a problem parsing json", e);
+			e.printStackTrace();
 			return false;
 		}
 	}
